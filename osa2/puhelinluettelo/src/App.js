@@ -51,7 +51,7 @@ const App = () => {
           setNewName('')
           setNewNumber('')
         })
-        .then( () => {
+        .then(() => {
           setSuccessMessage(
             `Added ${newName}`
           )
@@ -104,11 +104,11 @@ const App = () => {
 
     personService
     .destroy(id)
-      .then( () => {
+      .then(() => {
         setPersons(persons.filter(person => person.id !== id))
         setFilteredPersons(persons.filter(person => person.id !== id))
       })
-      .then( () => {
+      .then(() => {
         setSuccessMessage(
           `Deleted ${person.name}` 
         )
