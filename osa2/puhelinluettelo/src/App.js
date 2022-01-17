@@ -60,9 +60,7 @@ const App = () => {
           }, 5000)
         })
         .catch(error => {
-          setErrorMessage(
-            `Could not add ${newName}` 
-          )
+          setErrorMessage(error.response.data.error)
           setTimeout(() => {
             setErrorMessage(null)
           }, 5000)
@@ -90,9 +88,7 @@ const App = () => {
         }, 5000)
       })
       .catch(error => {
-        setErrorMessage(
-          `Information of ${person.name} has already been removed from server` 
-        )
+        setErrorMessage(error.response.data.error)
         setTimeout(() => {
           setErrorMessage(null)
         }, 5000)
