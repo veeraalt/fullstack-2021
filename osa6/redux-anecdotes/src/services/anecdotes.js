@@ -13,7 +13,16 @@ const createNew = async (content) => {
   return response.data
 }
 
+const vote = async (id) => {
+  const url = `${baseUrl}/${id}`
+  const request = await axios.get(url)
+  const anecdote = request.data
+  const response = await axios.patch(url, { votes: anecdote.votes + 1 })
+  return response.data
+}
+
 export default { 
   getAll,
   createNew,
+  vote,
 }
